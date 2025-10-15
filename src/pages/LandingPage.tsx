@@ -54,10 +54,6 @@ const LandingPage = () => {
     { value: "99.2%", label: "Uptime" },
   ];
 
-  const handleWatchDemo = () => {
-    // Demo video modal or redirect to demo video
-    window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
-  };
 
   const handleScheduleDemo = () => {
     // Redirect to scheduling platform like Calendly
@@ -205,7 +201,7 @@ const LandingPage = () => {
               Streamline your financial workflow with enterprise-grade expense tracking,
               comprehensive reporting, and secure data management solutions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+            <div className="flex justify-center px-4">
               <Link to="/signup" className="w-full sm:w-auto">
                 <Button
                   size="lg"
@@ -215,14 +211,6 @@ const LandingPage = () => {
                   <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </Button>
               </Link>
-              <Button
-                variant="outline"
-                size="lg"
-                className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 h-12 sm:h-auto"
-                onClick={handleWatchDemo}
-              >
-                Watch Demo
-              </Button>
             </div>
           </div>
         </div>
