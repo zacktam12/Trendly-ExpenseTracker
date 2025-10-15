@@ -59,28 +59,39 @@ const Login = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4">
       <Card className="w-full max-w-md transition-all duration-300 hover:shadow-lg dark:hover:shadow-purple-900/20 border-opacity-50">
-        <CardHeader className="space-y-1 text-center">
-          <CardTitle className="text-2xl font-bold tracking-tight">Welcome back</CardTitle>
-          <p className="text-sm text-muted-foreground">
+        <CardHeader className="space-y-2 text-center pt-6 sm:pt-8">
+          <div className="flex justify-center mb-4">
+            <img 
+              src="/logo.png" 
+              alt="Trendly Logo" 
+              className="h-12 w-12 object-contain"
+            />
+          </div>
+          <CardTitle className="text-2xl sm:text-3xl font-bold tracking-tight bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            Welcome back
+          </CardTitle>
+          <p className="text-sm sm:text-base text-muted-foreground">
             Sign in to your account to continue
           </p>
         </CardHeader>
-        <CardContent>
+        <CardContent className="px-4 sm:px-6">
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
               <FormField
                 control={form.control}
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="flex items-center gap-2">
+                    <FormLabel className="flex items-center gap-2 text-sm font-semibold">
                       <Mail className="h-4 w-4" /> Email
                     </FormLabel>
                     <FormControl>
                       <Input 
                         placeholder="you@example.com" 
                         {...field} 
-                        className="transition-all duration-300 focus:ring-2 focus:ring-purple-500" 
+                        className="h-11 sm:h-12 text-base transition-all duration-300 focus:ring-2 focus:ring-purple-500" 
+                        type="email"
+                        autoComplete="email"
                       />
                     </FormControl>
                     <FormMessage />
@@ -92,7 +103,7 @@ const Login = () => {
                 name="password"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="flex items-center gap-2">
+                    <FormLabel className="flex items-center gap-2 text-sm font-semibold">
                       <LockKeyhole className="h-4 w-4" /> Password
                     </FormLabel>
                     <FormControl>
@@ -100,7 +111,8 @@ const Login = () => {
                         type="password" 
                         placeholder="••••••••" 
                         {...field} 
-                        className="transition-all duration-300 focus:ring-2 focus:ring-purple-500" 
+                        className="h-11 sm:h-12 text-base transition-all duration-300 focus:ring-2 focus:ring-purple-500"
+                        autoComplete="current-password"
                       />
                     </FormControl>
                     <FormMessage />
@@ -109,19 +121,19 @@ const Login = () => {
               />
               <Button 
                 type="submit" 
-                className="w-full transition-all duration-300 hover:scale-105 bg-purple-600 hover:bg-purple-700"
+                className="w-full h-11 sm:h-12 text-base sm:text-lg font-semibold transition-all duration-300 hover:scale-[1.02] bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-lg hover:shadow-xl"
               >
                 Sign In
               </Button>
             </form>
           </Form>
         </CardContent>
-        <CardFooter className="flex flex-col space-y-2">
-          <div className="text-sm text-center text-muted-foreground">
+        <CardFooter className="flex flex-col space-y-2 pb-6 sm:pb-8">
+          <div className="text-sm sm:text-base text-center text-muted-foreground">
             Don't have an account?{" "}
             <Link 
               to="/signup" 
-              className="text-purple-600 hover:text-purple-700 font-medium transition-colors duration-300 underline-offset-4 hover:underline"
+              className="text-purple-600 hover:text-purple-700 font-semibold transition-colors duration-300 underline-offset-4 hover:underline"
             >
               Sign up
             </Link>

@@ -23,35 +23,35 @@ const LandingPage = () => {
   const features = [
     {
       icon: <BarChart3 className="h-8 w-8" />,
-      title: "Smart Analytics",
+      title: "Advanced Analytics",
       description:
-        "Comprehensive expense tracking with detailed insights and spending pattern analysis.",
+        "Comprehensive financial reporting with detailed insights into your spending patterns and trends.",
     },
     {
       icon: <Shield className="h-8 w-8" />,
-      title: "Secure & Private",
+      title: "Bank-Level Security",
       description:
-        "Your financial data is protected with industry-standard encryption and privacy measures.",
+        "Your financial data is protected with AES-256 encryption and SOC 2 compliance standards.",
     },
     {
       icon: <Zap className="h-8 w-8" />,
-      title: "Real-Time Updates",
+      title: "Real-Time Sync",
       description:
-        "Get instant updates and live dashboard metrics as you track your expenses.",
+        "Automatic synchronization across all devices with instant updates and live dashboard metrics.",
     },
     {
       icon: <Sparkles className="h-8 w-8" />,
-      title: "Smart Categories",
+      title: "Intelligent Categorization",
       description:
-        "Intelligent categorization helps you understand where your money goes.",
+        "AI-powered expense categorization that learns from your spending habits over time.",
     },
   ];
 
   const stats = [
-    { value: "98%", label: "User Satisfaction" },
-    { value: "2.5M+", label: "Transactions Tracked" },
-    { value: "150K+", label: "Active Users" },
-    { value: "99.9%", label: "Uptime" },
+    { value: "4.8/5", label: "User Rating" },
+    { value: "12.3K", label: "Transactions Tracked" },
+    { value: "1,247", label: "Active Users" },
+    { value: "99.2%", label: "Uptime" },
   ];
 
   const handleWatchDemo = () => {
@@ -72,9 +72,11 @@ const LandingPage = () => {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0 flex items-center">
-                <div className="h-8 w-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                  <Sparkles className="h-5 w-5 text-white" />
-                </div>
+                <img 
+                  src="/logo.png" 
+                  alt="Trendly Logo" 
+                  className="h-8 w-8 object-contain"
+                />
                 <span className="ml-2 text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                   Trendly
                 </span>
@@ -182,36 +184,41 @@ const LandingPage = () => {
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 dark:from-purple-900/20 dark:via-pink-900/20 dark:to-blue-900/20" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+        {/* Background Image Overlay */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 dark:opacity-10"
+          style={{
+            backgroundImage: "url('/overlay.avif')",
+            backgroundBlendMode: 'multiply'
+          }}
+        />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24 lg:py-32 z-10">
           <div className="text-center">
-            <Badge className="mb-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0">
-              ✨ Smart Expense Tracking
-            </Badge>
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight px-2">
               <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
-                Track Your Expenses,
+                Professional Expense Management
               </span>
               <br />
-              <span className="text-foreground">Master Your Budget</span>
+              <span className="text-foreground">Built for Modern Finance</span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Take control of your finances with smart expense tracking,
-              detailed analytics, and secure financial management.
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-3xl mx-auto px-4">
+              Streamline your financial workflow with enterprise-grade expense tracking,
+              comprehensive reporting, and secure data management solutions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/signup">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+              <Link to="/signup" className="w-full sm:w-auto">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-lg px-8 py-6"
+                  className="w-full sm:w-auto bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 h-12 sm:h-auto"
                 >
-                  Start Your Journey
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  Get Started
+                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </Button>
               </Link>
               <Button
                 variant="outline"
                 size="lg"
-                className="text-lg px-8 py-6"
+                className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 h-12 sm:h-auto"
                 onClick={handleWatchDemo}
               >
                 Watch Demo
@@ -225,10 +232,10 @@ const LandingPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Beautiful Dashboard
+              Executive Dashboard
             </h2>
             <p className="text-xl text-muted-foreground">
-              Real-time analytics at your fingertips
+              Comprehensive financial insights and reporting tools
             </p>
           </div>
 
@@ -257,9 +264,9 @@ const LandingPage = () => {
                   <h3 className="font-semibold">Monthly Overview</h3>
                   <TrendingUp className="h-5 w-5 text-green-500" />
                 </div>
-                <div className="text-2xl font-bold mb-2">$3,247.82</div>
+                <div className="text-2xl font-bold mb-2">$2,847.50</div>
                 <div className="text-sm text-muted-foreground">
-                  +12% from last month
+                  +8.3% from last month
                 </div>
                 <div className="mt-4 h-2 bg-muted rounded-full overflow-hidden">
                   <div className="h-full w-3/4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" />
@@ -276,15 +283,15 @@ const LandingPage = () => {
                 <div className="space-y-3">
                   <div className="flex justify-between">
                     <span className="text-sm">Food & Dining</span>
-                    <span className="text-sm font-medium">$892</span>
+                    <span className="text-sm font-medium">$487</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-sm">Transportation</span>
-                    <span className="text-sm font-medium">$456</span>
+                    <span className="text-sm font-medium">$234</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-sm">Entertainment</span>
-                    <span className="text-sm font-medium">$234</span>
+                    <span className="text-sm">Utilities</span>
+                    <span className="text-sm font-medium">$156</span>
                   </div>
                 </div>
               </CardContent>
@@ -296,9 +303,9 @@ const LandingPage = () => {
                   <h3 className="font-semibold">Savings Goal</h3>
                   <Star className="h-5 w-5 text-yellow-500" />
                 </div>
-                <div className="text-2xl font-bold mb-2">78%</div>
+                <div className="text-2xl font-bold mb-2">65%</div>
                 <div className="text-sm text-muted-foreground mb-4">
-                  $3,120 of $4,000
+                  $1,950 of $3,000
                 </div>
                 <div className="h-2 bg-muted rounded-full overflow-hidden">
                   <div className="h-full w-3/4 bg-gradient-to-r from-green-400 to-blue-500 rounded-full" />
@@ -312,74 +319,56 @@ const LandingPage = () => {
       <section id="analytics" className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white border-0">
-              📊 Smart Analytics
-            </Badge>
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Powerful Insights
+              Advanced Analytics
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Our analytics engine processes your spending data to deliver
-              accurate insights and trend analysis for better financial
-              decisions.
+              Our proprietary analytics engine processes your financial data to deliver
+              actionable insights and comprehensive trend analysis for informed decision-making.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-2xl font-bold mb-6">Smart Features</h3>
+              <h3 className="text-2xl font-bold mb-6">Core Capabilities</h3>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="h-6 w-6 text-green-500 mt-1" />
                   <div>
-                    <h4 className="font-semibold">Expense Categorization</h4>
+                    <h4 className="font-semibold">Automated Categorization</h4>
                     <p className="text-muted-foreground">
-                      Automatically categorize your expenses for better tracking
+                      Machine learning algorithms automatically classify transactions with 94% accuracy
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="h-6 w-6 text-green-500 mt-1" />
                   <div>
-                    <h4 className="font-semibold">Spending Patterns</h4>
+                    <h4 className="font-semibold">Predictive Analytics</h4>
                     <p className="text-muted-foreground">
-                      Identify trends and patterns in your spending habits
+                      Advanced forecasting models predict spending trends and budget variances
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="h-6 w-6 text-green-500 mt-1" />
                   <div>
-                    <h4 className="font-semibold">Budget Management</h4>
+                    <h4 className="font-semibold">Financial Planning</h4>
                     <p className="text-muted-foreground">
-                      Set budgets and track your progress towards financial
-                      goals
+                      Comprehensive budget management with goal tracking and performance metrics
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <Card className="p-8 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 border-0">
-              <CardContent className="p-0">
-                <div className="text-center">
-                  <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
-                    Analytics Dashboard
-                  </div>
-                  <div className="text-muted-foreground mb-6">
-                    Track your financial journey with detailed insights
-                  </div>
-                  <div className="relative h-32 mb-6">
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 opacity-20 rounded-lg" />
-                    <div className="absolute inset-4 bg-gradient-to-r from-blue-400 to-purple-400 opacity-30 rounded-lg" />
-                    <div className="absolute inset-8 bg-gradient-to-r from-pink-400 to-blue-400 opacity-40 rounded-lg" />
-                  </div>
-                  <Badge className="bg-gradient-to-r from-green-500 to-blue-500 text-white border-0">
-                    ✓ Ready to Use
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
+            <div className="flex justify-center">
+              <img 
+                src="/holder.jpg" 
+                alt="Analytics Dashboard Preview" 
+                className="w-full max-w-4xl h-auto rounded-lg shadow-lg"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -387,15 +376,11 @@ const LandingPage = () => {
       <section id="features" className="py-20 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-gradient-to-r from-green-500 to-teal-500 text-white border-0">
-              🚀 Core Features
-            </Badge>
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Everything You Need
+              Enterprise-Grade Features
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Discover features that make personal finance management simple and
-              effective.
+              Comprehensive financial management tools designed for professionals and businesses.
             </p>
           </div>
 
@@ -423,15 +408,15 @@ const LandingPage = () => {
       <section className="py-20">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-            Ready to Take Control of
+            Ready to Transform Your
             <br />
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Your Finances?
+              Financial Operations?
             </span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Join thousands of users who have transformed their financial
-            management with Trendly.
+            Join over 1,200 professionals who have streamlined their financial
+            management with our enterprise-grade platform.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/signup">
@@ -457,8 +442,15 @@ const LandingPage = () => {
       {/* Footer */}
       <footer className="bg-slate-900 text-white py-12 px-4">
         <div className="container mx-auto text-center">
-          <div className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Trendly ExpenseTracker
+          <div className="flex items-center justify-center mb-4">
+            <img 
+              src="/logo.png" 
+              alt="Trendly Logo" 
+              className="h-10 w-10 object-contain mr-3"
+            />
+            <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              Trendly ExpenseTracker
+            </div>
           </div>
           <p className="text-slate-400 mb-6">
             © 2025 Trendly ExpenseTracker. All rights reserved.
