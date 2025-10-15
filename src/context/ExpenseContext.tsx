@@ -23,15 +23,15 @@ interface ExpenseContextType {
   updateExpense: (expense: Expense) => void;
 }
 
-// Initial categories
+// Initial categories with professional, accessible colors
 const initialCategories: Category[] = [
-  { id: "1", name: "Food", color: "#F2FCE2", icon: "utensils" },
-  { id: "2", name: "Transportation", color: "#D3E4FD", icon: "car" },
-  { id: "3", name: "Entertainment", color: "#FFDEE2", icon: "film" },
-  { id: "4", name: "Bills", color: "#FEF7CD", icon: "file-invoice-dollar" },
-  { id: "5", name: "Shopping", color: "#FEC6A1", icon: "shopping-bag" },
-  { id: "6", name: "Health", color: "#E5DEFF", icon: "heartbeat" },
-  { id: "7", name: "Other", color: "#C8C8C9", icon: "ellipsis-h" },
+  { id: "1", name: "Food & Dining", color: "#10B981", icon: "utensils" },
+  { id: "2", name: "Transportation", color: "#3B82F6", icon: "car" },
+  { id: "3", name: "Entertainment", color: "#F59E0B", icon: "film" },
+  { id: "4", name: "Bills & Utilities", color: "#EF4444", icon: "file-invoice-dollar" },
+  { id: "5", name: "Shopping", color: "#EC4899", icon: "shopping-bag" },
+  { id: "6", name: "Health & Fitness", color: "#8B5CF6", icon: "heartbeat" },
+  { id: "7", name: "Other", color: "#6B7280", icon: "ellipsis-h" },
 ];
 
 // Sample expenses for demo
