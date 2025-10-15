@@ -66,17 +66,37 @@ export default {
 				// Custom colors for our expense tracker
 				trendly: {
 					purple: {
-						light: '#E5DEFF',
-						DEFAULT: '#9b87f5',
-						dark: '#7E69AB',
+						light: '#F3F0FF',
+						DEFAULT: '#8B5CF6',
+						dark: '#7C3AED',
+						darker: '#6D28D9',
 					},
-					background: '#F6F7F9',
-					text: '#1A1F2C',
-					green: '#F2FCE2',
-					yellow: '#FEF7CD',
-					orange: '#FEC6A1',
-					pink: '#FFDEE2',
-					blue: '#D3E4FD'
+					pink: {
+						light: '#FCE7F3',
+						DEFAULT: '#EC4899',
+						dark: '#DB2777',
+					},
+					blue: {
+						light: '#EFF6FF',
+						DEFAULT: '#3B82F6',
+						dark: '#2563EB',
+					},
+					background: '#FAFBFC',
+					text: '#0F172A',
+					// Category colors - professional and accessible
+					categories: {
+						food: '#10B981',        // Emerald
+						transport: '#3B82F6',   // Blue
+						entertainment: '#F59E0B', // Amber
+						bills: '#EF4444',       // Red
+						shopping: '#EC4899',    // Pink
+						health: '#8B5CF6',      // Purple
+						other: '#6B7280',       // Gray
+					},
+					success: '#10B981',
+					warning: '#F59E0B',
+					error: '#EF4444',
+					info: '#3B82F6',
 				}
 			},
 			borderRadius: {
