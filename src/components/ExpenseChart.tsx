@@ -6,6 +6,8 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recha
 import { ExpensesByCategory } from '@/types';
 import { Card, CardContent } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import EmptyState from './EmptyState';
+import { PieChartIcon } from 'lucide-react';
 
 const ExpenseChart = () => {
   const { expenses, categories } = useExpense();
@@ -69,10 +71,12 @@ const ExpenseChart = () => {
 
   if (expensesByCategory.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center p-8 text-center">
-        <p className="text-muted-foreground mb-2">No expense data available</p>
-        <p className="text-sm text-muted-foreground">Add some expenses to see your spending breakdown</p>
-      </div>
+      <EmptyState
+        icon={PieChartIcon}
+        title="No Data to Display"
+        description="Add some expenses to see your spending breakdown and visualize where your money goes."
+        iconColor="text-blue-500"
+      />
     );
   }
 

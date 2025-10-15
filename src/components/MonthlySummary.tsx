@@ -11,6 +11,8 @@ import {
   ResponsiveContainer,
   LabelList,
 } from "recharts";
+import EmptyState from "./EmptyState";
+import { TrendingUp } from "lucide-react";
 
 const MonthlySummary: React.FC = () => {
   const { getMonthlyTotal } = useExpense();
@@ -29,14 +31,12 @@ const MonthlySummary: React.FC = () => {
 
   if (!hasData) {
     return (
-      <div className="flex flex-col items-center justify-center p-8 text-center">
-        <p className="text-muted-foreground mb-2">
-          No monthly expense data available
-        </p>
-        <p className="text-sm text-muted-foreground">
-          Add expenses to see your monthly trends
-        </p>
-      </div>
+      <EmptyState
+        icon={TrendingUp}
+        title="No Monthly Data"
+        description="Track your expenses over time to see monthly spending trends and patterns."
+        iconColor="text-green-500"
+      />
     );
   }
 

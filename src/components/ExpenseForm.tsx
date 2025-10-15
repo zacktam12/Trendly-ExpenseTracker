@@ -125,21 +125,21 @@ const ExpenseForm: React.FC<ExpenseFormProps> = ({ expense, onSubmit, onCancel, 
       name="category"
       render={({ field }) => (
         <FormItem>
-          <FormLabel>Category</FormLabel>
-          <div className="space-y-2">
+          <FormLabel className="text-sm font-semibold">Category</FormLabel>
+          <div className="space-y-3">
             <Select value={field.value} onValueChange={field.onChange}>
               <FormControl>
-                <SelectTrigger>
+                <SelectTrigger className="h-11 sm:h-12 text-base focus:ring-2 focus:ring-purple-500 transition-all">
                   <SelectValue placeholder="Select a category" />
                 </SelectTrigger>
               </FormControl>
               <SelectContent>
                 {categories.map((category) => (
-                  <SelectItem key={category.id} value={category.id}>
+                  <SelectItem key={category.id} value={category.id} className="py-3 text-base cursor-pointer">
                     {category.name}
                   </SelectItem>
                 ))}
-                <SelectItem value="__add_new__" className="text-blue-600 font-medium">
+                <SelectItem value="__add_new__" className="text-purple-600 font-medium py-3 text-base cursor-pointer">
                   <div className="flex items-center gap-2">
                     <Plus className="h-4 w-4" />
                     Add new category
@@ -154,8 +154,14 @@ const ExpenseForm: React.FC<ExpenseFormProps> = ({ expense, onSubmit, onCancel, 
                   value={newCategoryName}
                   onChange={(e) => setNewCategoryName(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && handleAddNewCategory()}
+                  className="h-11 text-base focus:ring-2 focus:ring-purple-500 transition-all"
                 />
-                <Button type="button" size="sm" onClick={handleAddNewCategory}>
+                <Button 
+                  type="button" 
+                  size="sm" 
+                  onClick={handleAddNewCategory}
+                  className="h-11 px-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
+                >
                   Add
                 </Button>
               </div>
@@ -171,20 +177,35 @@ const ExpenseForm: React.FC<ExpenseFormProps> = ({ expense, onSubmit, onCancel, 
   if (handleClose) {
     return (
       <Dialog open={true} onOpenChange={(open) => !open && handleClose()}>
-        <DialogContent className="sm:max-w-[425px]">
-          <DialogHeader>
-            <DialogTitle>{expense ? 'Edit Expense' : 'Add New Expense'}</DialogTitle>
+        <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
+          <DialogHeader className="pb-4">
+            <div className="flex items-center justify-center mb-4">
+              <img 
+                src="/logo.png" 
+                alt="Trendly Logo" 
+                className="h-8 w-8 object-contain"
+              />
+            </div>
+            <DialogTitle className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent text-center">
+              {expense ? 'Edit Expense' : 'Add New Expense'}
+            </DialogTitle>
           </DialogHeader>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4">
+            <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-5 sm:space-y-6">
               <FormField
                 control={form.control}
                 name="amount"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Amount</FormLabel>
+                    <FormLabel className="text-sm font-semibold">Amount</FormLabel>
                     <FormControl>
-                      <Input type="number" step="0.01" placeholder="0.00" {...field} />
+                      <Input 
+                        type="number" 
+                        step="0.01" 
+                        placeholder="0.00" 
+                        {...field} 
+                        className="h-11 sm:h-12 text-base focus:ring-2 focus:ring-purple-500 transition-all"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -194,11 +215,12 @@ const ExpenseForm: React.FC<ExpenseFormProps> = ({ expense, onSubmit, onCancel, 
               {renderCategorySelect()}
 
               <FormItem>
-                <FormLabel>Date</FormLabel>
+                <FormLabel className="text-sm font-semibold">Date</FormLabel>
                 <Input
                   type="date"
                   value={selectedDate}
                   onChange={handleDateChange}
+                  className="h-11 sm:h-12 text-base focus:ring-2 focus:ring-purple-500 transition-all"
                 />
               </FormItem>
 
@@ -207,20 +229,34 @@ const ExpenseForm: React.FC<ExpenseFormProps> = ({ expense, onSubmit, onCancel, 
                 name="note"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Note (Optional)</FormLabel>
+                    <FormLabel className="text-sm font-semibold">Note (Optional)</FormLabel>
                     <FormControl>
-                      <Textarea placeholder="Add details about this expense..." {...field} />
+                      <Textarea 
+                        placeholder="Add details about this expense..." 
+                        {...field} 
+                        className="min-h-[100px] sm:min-h-[120px] text-base resize-none focus:ring-2 focus:ring-purple-500 transition-all"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
 
-              <div className="flex justify-end space-x-2">
-                <Button type="button" variant="outline" onClick={handleCancel}>
+              <div className="flex flex-col-reverse sm:flex-row justify-end gap-3 sm:gap-2 pt-4">
+                <Button 
+                  type="button" 
+                  variant="outline" 
+                  onClick={handleCancel}
+                  className="h-11 sm:h-10 text-base sm:text-sm font-medium"
+                >
                   Cancel
                 </Button>
-                <Button type="submit">{expense ? 'Update' : 'Add'} Expense</Button>
+                <Button 
+                  type="submit"
+                  className="h-11 sm:h-10 text-base sm:text-sm font-medium bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
+                >
+                  {expense ? 'Update' : 'Add'} Expense
+                </Button>
               </div>
             </form>
           </Form>
